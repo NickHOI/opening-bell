@@ -52,12 +52,12 @@
       }
 
       var buildUrl = ".";
-      var loaderUrl = buildUrl + "/OpeningBell-2.4-Web.loader.js";
+      var loaderUrl = buildUrl + "/OpeningBell-2.4-Web.loader.js?v=64abd4326f";
       var config = {
         arguments: [],
         dataUrl: buildUrl + "/OpeningBell-2.4-Web.data.unityweb",
-        frameworkUrl: buildUrl + "/OpeningBell-2.4-Web.framework.js.unityweb",
-        codeUrl: buildUrl + "/OpeningBell-2.4-Web.wasm.unityweb",
+        frameworkUrl: buildUrl + "/OpeningBell-2.4-Web.framework.js.unityweb?v=64abd4326f",
+        codeUrl: buildUrl + "/OpeningBell-2.4-Web.wasm.unityweb?v=64abd4326f",
         streamingAssetsUrl: ".",
         companyName: "Opening Bell",
         productName: "Opening Bell",
@@ -113,7 +113,7 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = async () => {
-        const partNames = ["OpeningBell-2.4-Web.data.unityweb.part01", "OpeningBell-2.4-Web.data.unityweb.part02", "OpeningBell-2.4-Web.data.unityweb.part03", "OpeningBell-2.4-Web.data.unityweb.part04"];
+        const partNames = ["OpeningBell-2.4-Web.data.unityweb.part01?v=64abd4326f", "OpeningBell-2.4-Web.data.unityweb.part02?v=64abd4326f", "OpeningBell-2.4-Web.data.unityweb.part03?v=64abd4326f", "OpeningBell-2.4-Web.data.unityweb.part04?v=64abd4326f"];
         let gameDataUrl;
         try {
           const parts = await Promise.all(partNames.map(async (name) => {
