@@ -25,6 +25,18 @@
     </div>
     <script>
       var canvas = document.querySelector("#unity-canvas");
+      // Unity's Web runtime does not handle a rejected pointer lock request.
+      const requestPointerLock = canvas.requestPointerLock?.bind(canvas);
+      if (requestPointerLock) {
+        canvas.requestPointerLock = (...options) => {
+          const request = requestPointerLock(...options);
+          request?.catch(() => {
+            unityShowBanner("未能鎖定滑鼠。可用 F／H／T／G 轉向，或者再撳遊戲畫面試一次。", "warning");
+          });
+          return request;
+        };
+      }
+
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
